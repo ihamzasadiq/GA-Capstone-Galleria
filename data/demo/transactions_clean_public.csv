@@ -1,0 +1,52 @@
+image_key,receipt_id,line_number,transaction_date,customer_id,transaction_type,brand_clean,model_number,description_raw,product_category,color,quantity,unit_price_bhd,line_total_clean,receipt_total_bhd,payment_status,alteration_required,alteration_details
+receipt-1,551,1,2025-03-20,CUST-001,Product Sale,Unknown,,Cake Dress Sale,Abaya,Unknown,1,40.0,40.0,40.0,Partially Paid,Unknown,
+receipt-2,552,1,2025-03-20,CUST-002,Product Sale,Unknown,,Farasha Sale,Abaya,Unknown,1,39.0,39.0,39.0,Paid,Unknown,
+receipt-3,553,1,2025-03-21,CUST-003,Alteration,Unknown,,Alteration,Alteration,Unknown,1,1.5,1.5,1.5,Paid,Yes,Alteration
+receipt-4,554,1,2025-03-21,CUST-004,Product Sale,Blazar,,Blazar Abaya Sale,Abaya,Unknown,1,39.0,39.0,39.0,Paid,Unknown,
+receipt-5,555,1,2025-03-22,CUST-005,Product Sale,Unknown,,Maroon crepe abaya,Abaya,Maroon,1,,,,Balance Due,Unknown,
+receipt-6,556,1,2025-03-22,CUST-006,Product Sale,Unknown,,White crepe dress,Dress,White,1,,,,Balance Due,Unknown,
+receipt-7,557,1,2025-03-22,CUST-007,Product Sale,Unknown,,Navy blue dress,Dress,Navy blue,2,40.0,80.0,120.0,Partially Paid,Unknown,
+receipt-7,557,2,2025-03-22,CUST-007,Product Sale,Unknown,,Dark maroon dress,Dress,Dark maroon,1,40.0,40.0,120.0,Partially Paid,Unknown,
+receipt-8,558,1,2025-03-22,CUST-008,Product Sale,Unknown,,Green dress,Dress,Green,1,38.0,38.0,38.0,Paid,Unknown,
+receipt-9,559,1,2025-03-22,CUST-009,Alteration,Unknown,,Alteration,Alteration,Unknown,1,2.0,2.0,2.0,Paid,Yes,Alteration
+receipt-10,560,1,2025-03-22,CUST-010,Product Sale,Unknown,,Cake Dress Sale,Dress,Unknown,1,38.0,38.0,38.0,Paid,Unknown,
+receipt-11,561,1,2025-03-23,CUST-011,Product Sale,Farasha,,Farasha Sale,Abaya,Unknown,1,39.0,39.0,39.0,Paid,Unknown,
+receipt-12,562,1,2025-03-24,CUST-012,Alteration,Unknown,,Alteration,Alteration,Unknown,1,2.0,2.0,2.0,Paid,Yes,Alteration
+receipt-13,563,1,2025-03-24,CUST-013,Alteration,Unknown,,Alteration,Alteration,Unknown,1,1.5,1.5,1.5,Paid,Yes,Alteration
+receipt-14,564,1,2025-03-25,CUST-014,Product Sale,Unknown,,Navy blue coat,Coat,Navy blue,1,,,,Balance Due,Unknown,
+receipt-15,565,1,2025-03-26,CUST-015,Product Sale,Unknown,,Olive green linen,Dress,Olive green,1,,,,Unknown,Unknown,
+receipt-15,565,2,2025-03-26,CUST-015,Product Sale,Unknown,,Bulgar crepe abaya,Abaya,Unknown,1,,,,Unknown,Unknown,
+receipt-16,566,1,2025-03-26,CUST-016,Product Sale,Farasha,,Farasha Sale,Abaya,Unknown,1,39.0,39.0,39.0,Paid,Unknown,
+receipt-17,567,1,2025-03-26,CUST-017,Alteration,Unknown,,Alteration,Alteration,Unknown,1,1.0,1.0,1.0,Paid,Yes,Alteration
+receipt-18,568,1,2025-03-27,CUST-018,Alteration,Unknown,,Alteration,Alteration,Unknown,1,2.0,2.0,2.0,Paid,Yes,Alteration
+receipt-19,569,1,2025-03-27,CUST-019,Product Sale,Unknown,,Off white linen dress (sale),Dress,Off white,1,39.0,39.0,39.0,Paid,Unknown,
+receipt-20,570,1,2025-03-28,CUST-020,Alteration,Unknown,,Alteration,Alteration,Unknown,1,2.0,2.0,2.0,Paid,Yes,Alteration
+receipt-21,571,1,2025-03-28,CUST-021,Product Sale,Unknown,,Bist organza / off white,Unknown,Off white,2,,,70.0,Paid,Unknown,
+receipt-22,573,1,2025-03-28,CUST-022,Alteration,Unknown,,Alteration,Alteration,Unknown,1,1.5,1.5,1.5,Paid,Yes,Alteration
+receipt-23,574,1,2025-03-28,CUST-023,Product Sale,Unknown,,Blazer stitching,Blazer,Unknown,1,40.0,40.0,50.0,Paid,Unknown,
+receipt-23,574,2,2025-03-28,CUST-023,Product Sale,Unknown,,Pant stitching,Pants,Unknown,1,10.0,10.0,50.0,Paid,Unknown,
+receipt-24,575,1,2025-03-28,CUST-024,Product Sale,Unknown,,Cake Dress Sale,Dress,Unknown,1,38.0,38.0,38.0,Paid,Unknown,
+receipt-25,576,1,2025-03-29,CUST-025,Alteration,Unknown,,Alteration,Alteration,Unknown,1,1.0,1.0,1.0,Paid,Yes,Alteration
+receipt-26,577,1,2025-03-29,CUST-026,Alteration,Unknown,,Alteration,Alteration,Unknown,1,2.0,2.0,2.0,Paid,Yes,Alteration
+receipt-27,578,1,2025-03-29,CUST-027,Product Sale,Unknown,,Abaya Sale,Abaya,Unknown,1,38.0,38.0,38.0,Paid,Unknown,
+receipt-28,579,1,2025-03-29,CUST-028,Product Sale,Unknown,,Bist Sale,Unknown,Unknown,1,35.0,35.0,35.0,Paid,Unknown,
+receipt-29,580,1,2025-04-02,CUST-029,Product Sale,Unknown,,Abaya Sale,Abaya,Unknown,1,29.0,29.0,29.0,Paid,Unknown,
+receipt-30,581,1,2025-04-02,CUST-030,Alteration,Unknown,,Alteration,Alteration,Unknown,1,1.5,1.5,1.5,Paid,Yes,Alteration
+receipt-31,582,1,2025-04-03,CUST-031,Product Sale,Unknown,,Black organza (order),Abaya,Black,1,39.0,39.0,39.0,Paid,Unknown,
+receipt-32,583,1,2025-04-04,CUST-032,Product Sale,Unknown,,Green blazer taffeta set,Set,Green,1,45.0,45.0,45.0,Paid,Unknown,
+receipt-33,584,1,2025-04-08,CUST-033,Alteration,Unknown,,Alteration,Alteration,Unknown,1,4.0,4.0,4.0,Paid,Yes,Alteration
+receipt-34,585,1,,CUST-034,Product Sale,Unknown,,Green crepe abaya,Abaya,Green,1,,,,Unknown,Unknown,
+receipt-35,586,1,2025-04-09,CUST-035,Product Sale,Unknown,,Abaya Sale,Abaya,Unknown,1,29.0,29.0,29.0,Paid,Unknown,
+receipt-36,587,1,2025-04-10,CUST-036,Product Sale,Unknown,,Abaya logo,Abaya,Unknown,2,1.0,2.0,1.0,Paid,Unknown,
+receipt-37,588,1,2025-04-12,CUST-037,Alteration,Unknown,,Alteration,Alteration,Unknown,1,3.0,3.0,3.0,Paid,Yes,Alteration
+receipt-38,589,1,2025-04-14,CUST-038,Product Sale,Unknown,,Sheila Sale,Sheila,Unknown,1,2.0,2.0,2.0,Paid,Unknown,
+receipt-39,590,1,2025-04-15,CUST-039,Alteration,Unknown,,Alteration,Alteration,Unknown,2,,,3.0,Paid,Yes,Alteration
+receipt-40,591,1,2025-04-17,CUST-040,Product Sale,Unknown,,Green dress order (small size),Dress,Green,1,38.0,38.0,38.0,Partially Paid,Unknown,
+receipt-41,592,1,2025-04-17,CUST-041,Product Sale,Unknown,,Green dress (sale),Dress,Green,1,38.0,38.0,38.0,Paid,Unknown,
+receipt-42,593,1,2025-04-18,CUST-042,Product Sale,Unknown,,Dark green abaya,Abaya,Dark green,1,29.0,29.0,29.0,Paid,Unknown,
+receipt-43,594,1,2025-04-04,CUST-043,Product Sale,Unknown,,Beige crepe abaya sale,Abaya,Beige,1,29.0,29.0,58.0,Paid,Unknown,
+receipt-43,594,2,2025-04-04,CUST-043,Product Sale,Unknown,,Black crepe abaya order,Abaya,Black,1,29.0,29.0,58.0,Paid,Unknown,
+receipt-44,595,1,2025-04-19,CUST-044,Alteration,Unknown,,Alteration,Alteration,Unknown,1,10.0,10.0,10.0,Paid,Yes,Alteration
+receipt-45,596,1,2025-04-20,CUST-045,Product Sale,Unknown,,Olive green abaya sale,Abaya,Olive green,1,39.0,39.0,73.0,Partially Paid,Unknown,
+receipt-45,596,2,2025-04-20,CUST-045,Product Sale,Unknown,,Black abaya sale,Abaya,Black,1,32.0,32.0,73.0,Partially Paid,Unknown,
+receipt-45,596,3,2025-04-20,CUST-045,Delivery Charge,Unknown,,Delivery charge,Delivery,Unknown,1,2.0,2.0,73.0,Partially Paid,Unknown,
