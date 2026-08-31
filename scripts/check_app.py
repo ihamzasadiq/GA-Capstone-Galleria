@@ -22,6 +22,8 @@ REQUIRED_FILES = [
     "views/receipt_ocr.py",
     "views/brand_performance.py",
     "views/customer_insights.py",
+    "views/intelligence.py",
+    "services/intelligence.py",
     "data/demo/transactions_clean_public.csv",
     "data/demo/receipts_clean_public.csv",
 ]

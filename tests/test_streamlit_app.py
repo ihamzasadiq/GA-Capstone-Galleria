@@ -16,6 +16,7 @@ class StreamlitSmokeTests(unittest.TestCase):
             "views/receipt_ocr.py",
             "views/brand_performance.py",
             "views/customer_insights.py",
+            "views/intelligence.py",
         ]
         app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
         self.assertEqual(len(app.exception), 0)

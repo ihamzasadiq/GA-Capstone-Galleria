@@ -1,8 +1,8 @@
-check,count,status,priority,detail
-Duplicate receipt-line rows,0,Passed,Low,No duplicated receipt and line-number combinations were found
-Missing transaction dates,1,Review,Medium,One record cannot be placed correctly on the sales timeline
-Missing receipt totals,5,Review,High,Five receipts do not have a reliable total
-Unknown brand item rows,48,Blocked,High,Brand reporting is limited until the brand is confirmed during review
-Receipt total vs item total mismatches,1,Review,High,One receipt needs its line values checked
-Receipt images excluded from demo,45,Protected,Info,Private source images are intentionally not included in the public package
-Marketing consent confirmed,0,Blocked,High,No customer should be contacted until consent is recorded
+Check,Count
+Duplicate receipt-line rows,6
+Missing transaction dates,21
+Missing receipt totals,37
+Unknown brand item rows,267
+Receipt total vs item total mismatches,13
+Receipt images not found,1
+Images without verified labels,4

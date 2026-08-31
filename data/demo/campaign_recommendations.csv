@@ -1,4 +1,5 @@
 audience,recommended_campaign,campaign_reason,eligible_customers,contactable_with_consent
-Inactive,10% Return Offer,Encourage a customer who has not purchased recently,31,0
-Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign,13,0
-Standard,Collection Update,General product awareness,1,0
+Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour,13,0
+Inactive,10% Return Offer,Encourage a customer who has not purchased recently,163,0
+Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign,37,0
+Standard,Collection Update,General product awareness,7,0

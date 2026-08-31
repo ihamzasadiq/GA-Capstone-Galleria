@@ -1,0 +1,4 @@
+# Optional local benchmark dependencies. The deployed Streamlit dashboard reads
+# saved de-identified results and does not import these packages.
+paddleocr>=3.0,<4.0
+paddlepaddle>=3.0,<4.0

@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import unittest
 
+import pandas as pd
+
 from services.data import (
     brand_coverage,
     business_metrics,
@@ -18,6 +20,14 @@ from services.ocr import (
     extraction_error_message,
     items_frame,
     validation_warnings,
+)
+from services.intelligence import (
+    assert_public_export,
+    canonical_image_key,
+    canonical_receipts,
+    cluster_purchase_patterns,
+    forecast_next_week,
+    ocr_metric_summary,
 )
 
 
@@ -86,6 +96,56 @@ class OCRServiceTests(unittest.TestCase):
         self.assertIn("customer", payload)
         self.assertNotIn("customer_name", payload["receipt"])
         self.assertEqual(payload["source_filename"], "receipt.jpg")
+
+
+class IntelligenceServiceTests(unittest.TestCase):
+    def test_canonical_receipts_deduplicates_lines_and_preserves_missing_flags(self) -> None:
+        transactions = pd.DataFrame([
+            {"receipt_id": "1", "line_number": 1, "transaction_date": "2025-01-06", "receipt_total_bhd": 10, "quantity": 1, "line_total_clean": 10},
+            {"receipt_id": "1", "line_number": 1, "transaction_date": "2025-01-06", "receipt_total_bhd": 10, "quantity": 1, "line_total_clean": 10},
+            {"receipt_id": "2", "line_number": 1, "transaction_date": None, "receipt_total_bhd": None, "quantity": 1, "line_total_clean": None},
+        ])
+        receipts = canonical_receipts(transactions)
+        self.assertEqual(len(receipts), 2)
+        self.assertEqual(int(receipts.loc[receipts["receipt_id"].eq("1"), "duplicate_line_count"].iloc[0]), 2)
+        self.assertTrue(bool(receipts.loc[receipts["receipt_id"].eq("2"), "missing_date"].iloc[0]))
+        self.assertTrue(bool(receipts.loc[receipts["receipt_id"].eq("2"), "missing_total"].iloc[0]))
+
+    def test_purchase_clusters_are_deterministic(self) -> None:
+        rows = []
+        for number in range(8):
+            rows.append({
+                "receipt_id": str(number), "receipt_total_clean": 10 + number * 10,
+                "units": 1 + number % 2, "line_count": 1, "product_mix": "Abaya" if number < 4 else "Dress",
+                "alteration_mix": "No alteration", "payment_state": "Paid", "outstanding_balance_bhd": 0,
+            })
+        first, scores = cluster_purchase_patterns(pd.DataFrame(rows))
+        second, _ = cluster_purchase_patterns(pd.DataFrame(rows))
+        self.assertFalse(scores.empty)
+        self.assertListEqual(first["pattern_cluster"].tolist(), second["pattern_cluster"].tolist())
+
+    def test_forecast_gates_short_history_and_reports_gap(self) -> None:
+        short = pd.DataFrame({"transaction_date": pd.date_range("2025-01-06", periods=7, freq="7D"), "receipt_total_clean": range(10, 17)})
+        self.assertFalse(forecast_next_week(short)["available"])
+        dates = list(pd.date_range("2025-01-06", periods=4, freq="7D")) + list(pd.date_range("2025-03-03", periods=8, freq="7D"))
+        long = pd.DataFrame({"transaction_date": dates, "receipt_total_clean": range(12, 24)})
+        result = forecast_next_week(long)
+        self.assertTrue(result["available"])
+        self.assertTrue(result["gap_detected"])
+        self.assertEqual(result["evaluation_weeks"], 4)
+
+    def test_image_key_and_public_ocr_metrics(self) -> None:
+        self.assertEqual(canonical_image_key("Receipt_001.JPG"), "receipt-1")
+        evaluation = pd.DataFrame([
+            {"image_key": "receipt-001.jpg", "split": "Holdout test", "field": "receipt_total_bhd", "actual": 10.0, "predicted": 10.0005, "valid_json": True, "processing_seconds": 1.2},
+            {"image_key": "receipt-001.jpg", "split": "Holdout test", "field": "item_count", "actual": 2, "predicted": 1, "valid_json": True, "processing_seconds": 1.2},
+        ])
+        summary = ocr_metric_summary(evaluation)
+        self.assertEqual(summary["evaluated_receipts"], 1)
+        total_metric = summary["metrics"].loc[summary["metrics"]["field"].eq("receipt_total_bhd"), "exact_accuracy"].iloc[0]
+        self.assertAlmostEqual(total_metric, 1.0)
+        with self.assertRaises(ValueError):
+            assert_public_export(pd.DataFrame({"customer_name": ["Private"]}))
 
 
 if __name__ == "__main__":

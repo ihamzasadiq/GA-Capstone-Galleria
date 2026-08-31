@@ -1,0 +1,46 @@
+image_key,split,level,field,actual,predicted,processing_seconds,evaluated,is_correct,text_similarity
+receipt-3,Development,receipt,receipt_id,553,,13.26,True,0.0,0.0
+receipt-3,Development,receipt,transaction_date,2025-03-21 00:00:00,,13.26,True,0.0,0.0
+receipt-3,Development,receipt,receipt_total_bhd,1.5,5000,13.26,True,0.0,0.0
+receipt-3,Development,receipt,advance_paid_bhd,,0,13.26,False,,
+receipt-3,Development,receipt,balance_bhd,,5000,13.26,False,,
+receipt-3,Development,receipt,payment_status,Paid,Paid,13.26,True,1.0,100.0
+receipt-4,Development,receipt,receipt_id,554,,6.948,True,0.0,0.0
+receipt-4,Development,receipt,transaction_date,2025-03-21 00:00:00,,6.948,True,0.0,0.0
+receipt-4,Development,receipt,receipt_total_bhd,39.0,5000,6.948,True,0.0,0.0
+receipt-4,Development,receipt,advance_paid_bhd,,0,6.948,False,,
+receipt-4,Development,receipt,balance_bhd,,5000,6.948,False,,
+receipt-4,Development,receipt,payment_status,Paid,Paid,6.948,True,1.0,100.0
+receipt-5,Holdout test,receipt,receipt_id,555,,6.663,True,0.0,0.0
+receipt-5,Holdout test,receipt,transaction_date,2025-03-22 00:00:00,,6.663,True,0.0,0.0
+receipt-5,Holdout test,receipt,receipt_total_bhd,,5000,6.663,False,,
+receipt-5,Holdout test,receipt,advance_paid_bhd,,0,6.663,False,,
+receipt-5,Holdout test,receipt,balance_bhd,,5000,6.663,False,,
+receipt-5,Holdout test,receipt,payment_status,Unknown,Paid,6.663,False,,
+receipt-3,Development,receipt,item_count,1,2,13.26,True,0.0,0.0
+receipt-4,Development,receipt,item_count,1,2,6.948,True,0.0,0.0
+receipt-5,Holdout test,receipt,item_count,1,2,6.663,True,0.0,0.0
+receipt-3,Development,item,description_raw,Alteration,Galleria,13.26,True,0.0,55.55555555555556
+receipt-3,Development,item,brand,Unknown,Galleria,13.26,False,,
+receipt-3,Development,item,product_category,Alteration,Clothing,13.26,True,0.0,44.44444444444444
+receipt-3,Development,item,color,Unknown,Black,13.26,False,,
+receipt-3,Development,item,quantity,1.0,1,13.26,True,1.0,100.0
+receipt-3,Development,item,unit_price_bhd,1.5,2000,13.26,True,0.0,0.0
+receipt-3,Development,item,line_total_bhd,1.5,2000,13.26,True,0.0,0.0
+receipt-3,Development,item,alteration_required,Yes,,13.26,True,0.0,0.0
+receipt-4,Development,item,description_raw,Blazar Abaya Sale,Galleria,6.948,True,0.0,24.0
+receipt-4,Development,item,brand,Blazar,Galleria,6.948,True,0.0,28.57142857142857
+receipt-4,Development,item,product_category,Abaya,Clothing,6.948,True,0.0,0.0
+receipt-4,Development,item,color,Unknown,Black,6.948,False,,
+receipt-4,Development,item,quantity,1.0,1,6.948,True,1.0,100.0
+receipt-4,Development,item,unit_price_bhd,39.0,2000,6.948,True,0.0,0.0
+receipt-4,Development,item,line_total_bhd,39.0,2000,6.948,True,0.0,0.0
+receipt-4,Development,item,alteration_required,Unknown,,6.948,False,,
+receipt-5,Holdout test,item,description_raw,Maroon crepe abaya,Galleria,6.663,True,0.0,23.076923076923077
+receipt-5,Holdout test,item,brand,Unknown,Galleria,6.663,False,,
+receipt-5,Holdout test,item,product_category,Abaya,Clothing,6.663,True,0.0,0.0
+receipt-5,Holdout test,item,color,Maroon,Black,6.663,True,0.0,18.181818181818183
+receipt-5,Holdout test,item,quantity,1.0,1,6.663,True,1.0,100.0
+receipt-5,Holdout test,item,unit_price_bhd,,2000,6.663,False,,
+receipt-5,Holdout test,item,line_total_bhd,,2000,6.663,False,,
+receipt-5,Holdout test,item,alteration_required,Unknown,,6.663,False,,

@@ -1,46 +1,221 @@
 customer_id,receipts,total_spend_bhd,average_order_bhd,last_purchase,days_since_purchase,high_value,recent,inactive,alteration_customer,audience_tags,primary_audience,recommended_campaign,campaign_reason
-CUST-001,1,40.0,40.0,2025-03-20,523.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-002,1,39.0,39.0,2025-03-20,523.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-003,1,1.5,1.5,2025-03-21,522.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-004,1,39.0,39.0,2025-03-21,522.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-005,1,,,2025-03-22,521.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-006,1,,,2025-03-22,521.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-007,1,120.0,120.0,2025-03-22,521.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-008,1,38.0,38.0,2025-03-22,521.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-009,1,2.0,2.0,2025-03-22,521.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-010,1,38.0,38.0,2025-03-22,521.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-011,1,39.0,39.0,2025-03-23,520.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-012,1,2.0,2.0,2025-03-24,519.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-013,1,1.5,1.5,2025-03-24,519.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-014,1,,,2025-03-25,518.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-015,1,,,2025-03-26,517.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-016,1,39.0,39.0,2025-03-26,517.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-017,1,1.0,1.0,2025-03-26,517.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-018,1,2.0,2.0,2025-03-27,516.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-019,1,39.0,39.0,2025-03-27,516.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-020,1,2.0,2.0,2025-03-28,515.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-021,1,70.0,70.0,2025-03-28,515.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-022,1,1.5,1.5,2025-03-28,515.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-023,1,50.0,50.0,2025-03-28,515.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-024,1,38.0,38.0,2025-03-28,515.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-025,1,1.0,1.0,2025-03-29,514.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-026,1,2.0,2.0,2025-03-29,514.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-027,1,38.0,38.0,2025-03-29,514.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-028,1,35.0,35.0,2025-03-29,514.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-029,1,29.0,29.0,2025-04-02,510.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-030,1,1.5,1.5,2025-04-02,510.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-031,1,39.0,39.0,2025-04-03,509.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-032,1,45.0,45.0,2025-04-04,508.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-033,1,4.0,4.0,2025-04-08,504.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-001,1,40.0,40.0,2025-03-20,529.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-002,1,39.0,39.0,2025-03-20,529.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-003,1,1.5,1.5,2025-03-21,528.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-004,1,39.0,39.0,2025-03-21,528.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-005,1,,,2025-03-22,527.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-006,1,,,2025-03-22,527.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-007,1,120.0,120.0,2025-03-22,527.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-008,1,38.0,38.0,2025-03-22,527.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-009,1,2.0,2.0,2025-03-22,527.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-010,1,38.0,38.0,2025-03-22,527.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-011,1,39.0,39.0,2025-03-23,526.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-012,1,2.0,2.0,2025-03-24,525.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-013,1,1.5,1.5,2025-03-24,525.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-014,1,,,2025-03-25,524.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-015,1,,,2025-03-26,523.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-016,1,39.0,39.0,2025-03-26,523.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-017,1,1.0,1.0,2025-03-26,523.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-018,1,2.0,2.0,2025-03-27,522.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-019,1,39.0,39.0,2025-03-27,522.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-020,1,2.0,2.0,2025-03-28,521.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-021,1,70.0,70.0,2025-03-28,521.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-022,1,1.5,1.5,2025-03-28,521.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-023,1,50.0,50.0,2025-03-28,521.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-024,1,38.0,38.0,2025-03-28,521.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-025,1,1.0,1.0,2025-03-29,520.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-026,1,2.0,2.0,2025-03-29,520.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-027,1,38.0,38.0,2025-03-29,520.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-028,1,35.0,35.0,2025-03-29,520.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-029,1,29.0,29.0,2025-04-02,516.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-030,1,1.5,1.5,2025-04-02,516.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-031,1,39.0,39.0,2025-04-03,515.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-032,1,45.0,45.0,2025-04-04,514.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-033,1,4.0,4.0,2025-04-08,510.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
 CUST-034,1,,,,,False,False,False,False,Standard,Standard,Collection Update,General product awareness
-CUST-035,1,29.0,29.0,2025-04-09,503.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-036,1,1.0,1.0,2025-04-10,502.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-037,1,3.0,3.0,2025-04-12,500.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-038,1,2.0,2.0,2025-04-14,498.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-039,1,3.0,3.0,2025-04-15,497.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-040,1,38.0,38.0,2025-04-17,495.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-041,1,38.0,38.0,2025-04-17,495.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-042,1,29.0,29.0,2025-04-18,494.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-043,1,58.0,58.0,2025-04-04,508.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
-CUST-044,1,10.0,10.0,2025-04-19,493.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
-CUST-045,1,73.0,73.0,2025-04-20,492.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-035,1,29.0,29.0,2025-04-09,509.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-036,1,1.0,1.0,2025-04-10,508.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-037,1,3.0,3.0,2025-04-12,506.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-038,1,2.0,2.0,2025-04-14,504.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-039,1,3.0,3.0,2025-04-15,503.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-040,1,38.0,38.0,2025-04-17,501.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-041,1,38.0,38.0,2025-04-17,501.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-042,1,29.0,29.0,2025-04-18,500.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-043,1,58.0,58.0,2025-04-04,514.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-044,1,10.0,10.0,2025-04-19,499.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-045,1,73.0,73.0,2025-04-20,498.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-046,1,5.0,5.0,2025-11-07,297.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-047,1,40.0,40.0,2026-01-07,236.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-048,1,39.0,39.0,2026-01-08,235.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-049,1,29.0,29.0,2025-11-07,297.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-050,1,91.0,91.0,2025-11-08,296.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-051,1,25.0,25.0,2025-11-08,296.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-052,1,38.0,38.0,2025-11-09,295.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-053,1,33.0,33.0,2025-11-15,289.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-054,3,51.0,17.0,2025-12-03,271.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-055,1,32.0,32.0,2025-11-20,284.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-056,1,33.0,33.0,2025-11-21,283.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-057,1,25.0,25.0,2025-11-24,280.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-058,1,25.0,25.0,2025-11-26,278.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-059,1,1.0,1.0,2025-11-26,278.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-060,1,35.0,35.0,2025-11-27,277.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-061,1,83.0,83.0,2025-11-28,276.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-062,2,186.0,93.0,2025-12-31,243.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-063,1,22.0,22.0,2025-11-29,275.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-064,1,96.0,96.0,2025-12-03,271.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-065,1,35.0,35.0,2025-12-05,269.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-066,1,29.0,29.0,,,False,False,False,False,Standard,Standard,Collection Update,General product awareness
+CUST-067,1,,,,,False,False,False,False,Standard,Standard,Collection Update,General product awareness
+CUST-068,1,,,,,False,False,False,False,Standard,Standard,Collection Update,General product awareness
+CUST-069,1,,,2025-12-09,265.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-070,1,72.0,72.0,2025-12-12,262.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-071,1,1.0,1.0,2025-12-12,262.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-072,1,19.0,19.0,,,False,False,False,False,Standard,Standard,Collection Update,General product awareness
+CUST-073,1,35.0,35.0,2025-12-21,253.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-074,1,7.0,7.0,2025-12-23,251.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-075,1,32.0,32.0,2025-12-25,249.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-076,1,29.0,29.0,2025-12-29,245.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-077,1,36.0,36.0,2025-12-29,245.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-078,1,35.0,35.0,2025-12-31,243.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-079,1,1.5,1.5,2026-01-06,237.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-080,1,39.0,39.0,2025-03-11,538.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-081,1,,,2025-03-14,535.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-082,1,65.0,65.0,2025-05-02,486.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-083,1,,,2025-03-14,535.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-084,1,,,2025-05-25,463.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-085,1,,,,,False,False,False,False,Standard,Standard,Collection Update,General product awareness
+CUST-086,1,,,,,False,False,False,False,Standard,Standard,Collection Update,General product awareness
+CUST-087,1,2.0,2.0,2025-09-30,335.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-088,1,33.0,33.0,2025-09-30,335.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-089,1,32.0,32.0,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-090,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-091,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-092,1,33.0,33.0,2025-10-09,326.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-093,1,29.0,29.0,2025-03-04,545.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-094,1,1.5,1.5,2025-10-04,331.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-095,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-096,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-097,1,1.0,1.0,2025-10-09,326.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-098,1,33.0,33.0,2025-10-09,326.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-099,1,76.0,76.0,2025-10-12,323.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-100,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-101,1,33.0,33.0,2025-10-14,321.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-102,1,33.0,33.0,2025-10-15,320.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-103,1,30.0,30.0,2025-10-15,320.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-104,1,12.0,12.0,2025-10-16,319.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-105,1,1.5,1.5,2025-10-16,319.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-106,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-107,1,39.0,39.0,2025-10-20,315.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-108,1,36.0,36.0,2025-10-20,315.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-109,1,29.0,29.0,2025-10-21,314.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-110,2,41.0,20.5,2025-10-26,309.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-111,1,29.0,29.0,2025-10-21,314.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-112,1,29.0,29.0,2025-10-23,312.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-113,1,23.0,23.0,2025-10-23,312.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-114,1,29.0,29.0,2025-10-23,312.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-115,1,70.0,70.0,2025-10-24,311.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-116,1,29.0,29.0,2025-10-24,311.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-117,1,33.0,33.0,2025-10-25,310.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-118,1,29.0,29.0,2025-08-25,371.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-119,1,29.0,29.0,2025-10-26,309.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-120,1,80.0,80.0,2025-10-28,307.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-121,1,25.0,25.0,2025-11-28,276.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-122,1,75.0,75.0,2025-10-29,306.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-123,1,29.0,29.0,2025-10-30,305.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-124,1,54.0,54.0,2025-10-31,304.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-125,1,31.0,31.0,2025-11-01,303.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-126,1,1.5,1.5,2025-11-02,302.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-127,1,1.0,1.0,2025-04-23,495.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-128,1,55.0,55.0,2025-04-24,494.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-129,1,3.0,3.0,2025-04-28,490.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-130,1,36.0,36.0,2025-04-29,489.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-131,1,39.0,39.0,2025-04-20,498.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-132,1,77.0,77.0,2025-04-29,489.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-133,1,35.0,35.0,2025-05-01,487.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-134,1,38.0,38.0,2025-05-02,486.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-135,1,19.0,19.0,2025-05-25,463.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-136,1,39.0,39.0,2025-05-03,485.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-137,1,38.0,38.0,2025-05-03,485.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-138,1,33.0,33.0,2025-05-04,484.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-139,1,38.0,38.0,2025-05-06,482.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-140,1,69.0,69.0,2025-05-07,481.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-141,1,32.0,32.0,2025-05-07,481.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-142,1,10.0,10.0,2025-05-08,480.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-143,1,39.0,39.0,2025-05-09,479.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-144,1,12.0,12.0,2025-05-10,478.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-145,1,38.0,38.0,2025-05-10,478.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-146,1,3.0,3.0,2025-05-11,477.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-147,1,,,2025-05-11,477.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-148,1,38.0,38.0,2025-05-11,477.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-149,1,38.0,38.0,2025-05-13,475.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-150,1,25.0,25.0,2025-05-13,475.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-151,1,39.0,39.0,2025-05-12,476.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-152,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-153,1,38.0,38.0,2025-05-15,473.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-154,1,38.0,38.0,2025-05-15,473.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-155,1,2.0,2.0,2025-05-16,472.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-156,1,38.0,38.0,2025-05-19,469.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-157,1,42.0,42.0,2025-05-21,467.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-158,1,41.0,41.0,2025-05-21,467.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-159,1,25.0,25.0,2025-03-11,538.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-160,1,75.5,75.5,2025-05-22,466.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-161,1,77.0,77.0,2025-05-23,465.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-162,1,39.0,39.0,2025-03-15,534.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-163,1,39.0,39.0,2025-05-23,465.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-164,1,42.0,42.0,2025-05-24,464.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-165,1,38.0,38.0,2025-03-10,539.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-166,1,35.0,35.0,2025-05-24,464.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-167,1,28.0,28.0,2025-03-10,539.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-168,1,38.0,38.0,2025-05-24,464.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-169,1,,,2025-05-25,463.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-170,1,38.0,38.0,2025-03-09,540.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-171,1,,,2025-05-25,463.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-172,1,1.5,1.5,2025-05-27,461.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-173,1,38.0,38.0,2025-03-09,540.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-174,1,2.0,2.0,2025-05-25,463.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-175,1,36.0,36.0,2025-03-09,540.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-176,1,3.5,3.5,2025-05-25,463.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-177,1,29.0,29.0,2025-03-09,540.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-178,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-179,1,,,2025-05-27,461.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-180,1,,,2025-03-14,535.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-181,1,,,2025-05-27,461.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-182,1,42.0,42.0,2025-03-10,539.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-183,1,1.5,1.5,2025-03-09,540.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-184,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-185,1,39.0,39.0,2025-03-10,539.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-186,1,,,2025-03-14,535.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-187,1,42.0,42.0,2025-03-15,534.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-188,1,29.5,29.5,2025-03-12,537.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-189,1,39.0,39.0,2025-03-10,539.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-190,1,1.5,1.5,2025-03-15,534.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-191,1,38.0,38.0,2025-03-12,537.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-192,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-193,1,29.0,29.0,2025-03-16,533.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-194,1,140.0,140.0,2025-03-10,539.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-195,1,151.0,151.0,2025-03-16,533.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-196,1,38.0,38.0,2025-03-18,531.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-197,1,42.0,42.0,2025-03-14,535.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-198,1,29.0,29.0,2025-03-18,531.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-199,1,6.0,6.0,2025-03-15,534.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-200,1,,,2025-03-19,530.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-201,1,,,2025-03-19,530.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-202,1,35.0,35.0,2025-03-15,534.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-203,1,35.0,35.0,2025-03-19,530.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-204,1,51.0,51.0,2025-03-19,530.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-205,1,39.0,39.0,2025-03-18,531.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-206,1,,,2025-03-20,529.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-207,1,38.0,38.0,2025-03-19,530.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-208,1,,,2025-03-20,529.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-209,1,,,2025-03-20,529.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-210,1,59.0,59.0,2025-03-15,534.0,True,False,True,False,"High Value, Inactive",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-211,1,39.0,39.0,2025-03-15,534.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-212,1,2.0,2.0,2025-03-15,534.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-213,1,39.0,39.0,2025-03-19,530.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-214,1,39.0,39.0,2025-03-20,529.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-215,1,1.0,1.0,2025-03-20,529.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-216,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-217,1,100.0,100.0,2025-09-15,350.0,True,False,True,True,"High Value, Inactive, Alteration Customer",Inactive High Value,VIP Return Offer,Win back a valuable customer without a mass campaign
+CUST-218,1,35.0,35.0,2025-09-17,348.0,False,False,True,False,Inactive,Inactive,10% Return Offer,Encourage a customer who has not purchased recently
+CUST-219,1,,,,,False,False,False,True,Alteration Customer,Alteration Customer,Free Alteration,Use a service benefit relevant to previous behaviour
+CUST-220,1,39.0,39.0,2025-09-12,353.0,False,False,True,True,"Inactive, Alteration Customer",Inactive,10% Return Offer,Encourage a customer who has not purchased recently
