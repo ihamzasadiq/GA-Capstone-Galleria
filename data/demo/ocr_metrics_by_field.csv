@@ -1,0 +1,23 @@
+split,level,field,evaluated_values,exact_accuracy,average_similarity
+Development,item,alteration_required,1,0.0,0.0
+Development,item,brand,1,0.0,28.57142857142857
+Development,item,description_raw,2,0.0,39.77777777777778
+Development,item,line_total_bhd,2,0.0,0.0
+Development,item,product_category,2,0.0,22.22222222222222
+Development,item,quantity,2,1.0,100.0
+Development,item,unit_price_bhd,2,0.0,0.0
+Development,private,customer_name,2,0.0,0.0
+Development,private,phone_number,2,0.0,0.0
+Development,receipt,item_count,2,0.0,0.0
+Development,receipt,payment_status,2,1.0,100.0
+Development,receipt,receipt_id,2,0.0,0.0
+Development,receipt,receipt_total_bhd,2,0.0,0.0
+Development,receipt,transaction_date,2,0.0,0.0
+Holdout test,item,color,1,0.0,18.181818181818183
+Holdout test,item,description_raw,1,0.0,23.076923076923077
+Holdout test,item,product_category,1,0.0,0.0
+Holdout test,item,quantity,1,1.0,100.0
+Holdout test,private,customer_name,1,0.0,0.0
+Holdout test,receipt,item_count,1,0.0,0.0
+Holdout test,receipt,receipt_id,1,0.0,0.0
+Holdout test,receipt,transaction_date,1,0.0,0.0

@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-08-31T22:34:19.235198+00:00",
+  "workbook": "Galleria Receipt Data.xlsx",
+  "ocr_model": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "unique_receipts": 224,
+  "transaction_rows": 270,
+  "confirmed_brand_coverage": 0.011111111111111112,
+  "successful_ocr_extractions": 3,
+  "forecast_ready": false,
+  "important_limitations": [
+    "Receipt count is not store footfall.",
+    "Store GMV is not automatically Galleria rental revenue.",
+    "Brand rankings require better confirmed brand coverage.",
+    "Campaign recommendations are rules until outcomes are collected.",
+    "Forecasting requires a complete multi-month transaction history."
+  ]
+}

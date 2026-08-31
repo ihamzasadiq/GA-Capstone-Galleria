@@ -53,7 +53,7 @@ def page_header(kicker: str, title: str, description: str) -> None:
           <div class="g-page-title-row">
             <div>
               <div class="g-kicker">{escape(kicker)}</div>
-              <h1>{escape(title)}</h1>
+              <h1 class="g-page-heading">{escape(title)}</h1>
               <p>{escape(description)}</p>
             </div>
             <div class="g-data-pill"><span></span> Verified data</div>

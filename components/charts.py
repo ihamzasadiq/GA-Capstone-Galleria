@@ -5,15 +5,15 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-INK = "#21191D"
-GOLD = "#733653"
-GOLD_SOFT = "#B66D8D"
-GREEN = "#2E755E"
-RED = "#B95555"
-BLUE = "#52758A"
-MUTED = "#7C7076"
+INK = "#172033"
+GOLD = "#7C3AED"
+GOLD_SOFT = "#A78BFA"
+GREEN = "#12B76A"
+RED = "#D92D20"
+BLUE = "#475467"
+MUTED = "#667085"
 PAPER = "rgba(0,0,0,0)"
-PALETTE = [GOLD, "#D09AB1", GREEN, BLUE, "#9C8490", "#D7B77B", RED]
+PALETTE = [GOLD, "#A78BFA", GREEN, BLUE, "#C4B5FD", "#7F56D9", RED]
 
 
 def style_figure(fig: go.Figure, height: int = 380) -> go.Figure:
@@ -25,16 +25,16 @@ def style_figure(fig: go.Figure, height: int = 380) -> go.Figure:
         title={"font": {"family": "Manrope, Inter, Arial, sans-serif", "size": 17, "color": INK}, "x": 0.03},
         margin={"l": 28, "r": 24, "t": 62, "b": 36},
         legend={"orientation": "h", "yanchor": "bottom", "y": 1.02, "xanchor": "right", "x": 1},
-        hoverlabel={"bgcolor": "#FFFFFF", "font_color": INK, "bordercolor": "#E5DCE0"},
+        hoverlabel={"bgcolor": "#FFFFFF", "font_color": INK, "bordercolor": "#EAECF0"},
     )
-    fig.update_xaxes(gridcolor="rgba(76,52,64,0.07)", zeroline=False, title_font_color=MUTED)
-    fig.update_yaxes(gridcolor="rgba(76,52,64,0.07)", zeroline=False, title_font_color=MUTED)
+    fig.update_xaxes(gridcolor="rgba(16,24,40,0.07)", zeroline=False, title_font_color=MUTED)
+    fig.update_yaxes(gridcolor="rgba(16,24,40,0.07)", zeroline=False, title_font_color=MUTED)
     return fig
 
 
 def line_chart(data: pd.DataFrame, x: str, y: str, title: str, y_title: str = "BHD") -> go.Figure:
     fig = px.line(data, x=x, y=y, markers=True, color_discrete_sequence=[GOLD])
-    fig.update_traces(line={"width": 3}, marker={"size": 7, "line": {"width": 2, "color": "#FFFDF9"}})
+    fig.update_traces(line={"width": 3}, marker={"size": 7, "line": {"width": 2, "color": "#FFFFFF"}})
     fig.update_layout(title=title, xaxis_title="", yaxis_title=y_title)
     return style_figure(fig)
 
@@ -69,7 +69,7 @@ def donut_chart(data: pd.DataFrame, names: str, values: str, title: str) -> go.F
 
 def histogram(data: pd.DataFrame, x: str, title: str, bins: int = 12) -> go.Figure:
     fig = px.histogram(data, x=x, nbins=bins, color_discrete_sequence=[GOLD])
-    fig.update_traces(marker_line_color="#FFFDF9", marker_line_width=1)
+    fig.update_traces(marker_line_color="#FFFFFF", marker_line_width=1)
     fig.update_layout(title=title, xaxis_title="BHD", yaxis_title="Customers", bargap=0.08)
     return style_figure(fig)
 

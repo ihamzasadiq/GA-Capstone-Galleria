@@ -1,0 +1,6 @@
+# Notebook-only dependencies. Keep the Streamlit runtime lean by installing
+# these in the same virtual environment that executes the notebook.
+matplotlib>=3.8,<4.0
+seaborn>=0.13,<1.0
+nbconvert>=7.0,<8.0
+ipykernel>=6.0,<7.0

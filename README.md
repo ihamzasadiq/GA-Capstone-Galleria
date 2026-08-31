@@ -4,7 +4,7 @@
 
 ![Streamlit](https://img.shields.io/badge/interface-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-12%20passing-2E755E?style=for-the-badge)
+![Tests](https://img.shields.io/badge/tests-16%20passing-2E755E?style=for-the-badge)
 
 Upload a receipt, verify the extracted fields, and use the clean data to understand what is selling and who is buying.
 
@@ -14,7 +14,7 @@ Upload a receipt, verify the extracted fields, and use the clean data to underst
 
 Galleria Concept rents display space to independent abaya brands. Sales were previously recorded on paper receipts, which made brand reporting and customer analysis slow and inconsistent.
 
-This project converts those receipts into structured transaction data and presents the results in a focused four-page dashboard.
+This project converts those receipts into structured transaction data and presents the results in a focused five-page dashboard.
 
 ### Highlights
 
@@ -28,6 +28,7 @@ This project converts those receipts into structured transaction data and presen
 | Brand analysis | Confirmed brand sales, units, average price, and downloadable statement |
 | Customer groups | Top spenders, recent buyers, repeat customers, and alteration customers |
 | Promotion planning | Transparent potential-sales scenario for a selected customer group |
+| Intelligence | Exploratory purchase patterns, guarded next-week GMV baselines, and OCR benchmark reporting |
 | Privacy | Public demo files exclude names, phone numbers, email addresses, and physical addresses |
 
 ## Application Pages
@@ -79,6 +80,16 @@ Customer profiles are rebuilt from verified receipts whenever the application lo
 
 Recency is anchored to the latest transaction in the dataset, not the current date. This prevents historical demo data from incorrectly making every customer appear inactive.
 
+### Intelligence
+
+The Intelligence page makes its uncertainty explicit:
+
+- **Purchase Patterns** clusters complete receipts—not people—using standardized GMV, units, line count, product/alteration mix, payment state, and outstanding balance. K-Means considers 2–6 groups and selects the highest silhouette score. Labels describe the observed receipt profile only.
+- **Weekly GMV Forecast** is a one-week exploratory estimate. It compares last-week value, four-week moving average, and simple exponential smoothing with expanding-window MAE and WAPE. A historical gap is not converted into zero-sales weeks; only the newest continuous weekly period can train the model, and fewer than eight weeks shows an unavailable state.
+- **OCR Evaluation** displays only saved, de-identified benchmark results. It reports held-out receipt and field counts, JSON and missing-field rates, normalized field accuracy, BHD ±0.001 numeric accuracy, line-item precision/recall/F1, processing time, and error examples.
+
+The current workbook scope is **82 receipt IDs, 96 transaction lines, and 79 purchasing customer IDs**. Seventy-seven of those customers have one recorded receipt, so RFM frequency is descriptive rather than evidence of stable customer behaviour. The two active date periods are separated by 201 days; forecasting remains exploratory. The bundled public demo is a smaller 45-receipt fixture used for application tests and does not replace the capstone workbook.
+
 ## Promotion Example
 
 The Customers page includes a small scenario planner. It estimates possible orders and product sales from two editable assumptions:
@@ -108,7 +119,7 @@ Offer cost       = possible orders × cost per converted customer
 
 This is a planning scenario, not a machine-learning prediction. Product sales are also not automatically Galleria revenue because Galleria currently earns fixed rental fees rather than sales commission.
 
-## Current Data Snapshot
+## Included Demo Snapshot
 
 The anonymized demonstration dataset contains:
 
@@ -154,17 +165,23 @@ The default OCR profile uses:
 
 The app also includes a sample extraction flow that works without a token.
 
-## OCR Evaluation
+## OCR Evaluation and Benchmark Protocol
 
-The included notebook uses labelled receipt entries as ground truth. It can calculate:
+Qwen 2.5-VL remains the primary document-to-JSON extractor. It will be benchmarked against PaddleOCR PP-StructureV3, an optional structured-document dependency. The deployed dashboard reads saved de-identified results and never needs OCR benchmark dependencies or private receipt images.
 
-- Exact accuracy by field
-- Overall weighted field accuracy
-- Number of evaluated values
-- Number of evaluated receipts
-- Receipt and item-field error examples
+Once the 82 receipt images are available, normalize every image name to a canonical image key, then use a fixed receipt-level split:
 
-The dashboard does not invent an accuracy score. Results appear only after real OCR predictions are compared with verified answers and exported to `ocr_metrics_by_field.csv`.
+- 60 development receipts for prompt/parser configuration
+- 22 held-out receipts for the final evaluation
+
+Do not tune either pipeline on the held-out receipts. The evaluation reports:
+
+- Normalized exact accuracy by field and numeric accuracy within BHD 0.001
+- Evaluated receipt and field-value counts, valid-JSON and missing-field rates
+- Line-item precision, recall, and F1
+- Median processing time and a de-identified error-type table with image examples held in protected storage
+
+This is an evaluation of pretrained models, not fine-tuning. Original images, names, phones, and raw predictions remain outside Git and outside public dashboard exports.
 
 ## Run Locally
 
@@ -177,9 +194,26 @@ source .venv/bin/activate
 
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+python -m pip install -r requirements-notebook.txt
 
 streamlit run app.py
 ```
+
+For the optional local PaddleOCR PP-StructureV3 benchmark only (not required to run the dashboard):
+
+```bash
+python -m pip install -r requirements-ocr-benchmark.txt
+```
+
+### Run the notebook locally
+
+Use the virtual environment created above, not a separately installed Homebrew Jupyter. Put the private workbook and receipt images in a local folder outside the repository, then run:
+
+```bash
+bash scripts/run_notebook.sh /absolute/path/to/Galleria_Capstone
+```
+
+The script uses that folder as `GALLERIA_PROJECT_DIR`, saves the executed notebook to its `outputs/` directory, and produces public dashboard exports in `outputs/public/`.
 
 On Windows, activate the environment with:
 
@@ -193,7 +227,7 @@ Streamlit will print a local address, normally `http://localhost:8501`.
 
 ```text
 .
-|-- app.py                         # Application shell and four-page navigation
+|-- app.py                         # Application shell and five-page navigation
 |-- assets/
 |   `-- styles.css                 # Production-style visual system
 |-- components/
@@ -204,9 +238,11 @@ Streamlit will print a local address, normally `http://localhost:8501`.
 |   |-- receipt_ocr.py             # OCR and verification workflow
 |   |-- brand_performance.py       # Product and brand sales
 |   `-- customer_insights.py       # Customer groups and promotion scenario
+|   `-- intelligence.py            # Exploratory patterns, forecast, and OCR evaluation
 |-- services/
 |   |-- data.py                    # Data loading and business calculations
 |   `-- ocr.py                     # OCR profiles, extraction, and validation
+|   `-- intelligence.py            # Canonical receipts, modelling, and safe benchmark metrics
 |-- data/demo/                     # Anonymized demonstration exports
 |-- notebooks/
 |   `-- Galleria_Intelligence_Clean_Capstone_Colab.ipynb
@@ -226,6 +262,9 @@ Streamlit will print a local address, normally `http://localhost:8501`.
 - The top-spender group contains the highest 20% of current profiles.
 - Promotion outputs are labelled as scenarios rather than forecasts.
 - Partner product sales are separated from Galleria rental income.
+- Purchase-pattern clusters are exploratory receipt groups, not customer segments.
+- Missing dates and totals are kept as quality flags and excluded from modelling; they are never imputed.
+- Public exports must exclude names, phone numbers, addresses, emails, and receipt images.
 
 ## Validation
 
@@ -250,13 +289,15 @@ The checks cover:
 - Promotion arithmetic
 - OCR configuration and review payloads
 - Public-demo privacy
-- Rendering of all four pages
+- Canonical receipt aggregation, duplicate protection, model gating, OCR metrics, and public-export privacy
+- Rendering of all five pages
 
 ## Limitations
 
 - Only 3 of 51 demo transaction lines currently have a confirmed brand.
-- The demo covers approximately one month, so forecasting is intentionally excluded.
-- Customer matching depends on a consistent private identifier, normally a normalized phone number converted into a customer ID.
+- The demo covers approximately one month, so the Intelligence page correctly leaves the forecast unavailable.
+- The capstone's two observed date periods have a 201-day gap, which rules out a seasonal or long-range forecast.
+- Seventy-seven of 79 capstone customers currently have one recorded receipt; customer repeat behaviour cannot yet be modelled reliably.
 - Promotion results remain estimates until Galleria records campaign recipients, redemptions, and actual purchases.
 - Hosted OCR availability and cost depend on the selected inference provider.
 

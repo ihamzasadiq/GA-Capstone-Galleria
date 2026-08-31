@@ -27,6 +27,7 @@ pages = [
     st.Page("views/receipt_ocr.py", title="Receipts", icon=":material/receipt_long:"),
     st.Page("views/brand_performance.py", title="Sales", icon=":material/bar_chart:"),
     st.Page("views/customer_insights.py", title="Customers", icon=":material/group:"),
+    st.Page("views/intelligence.py", title="Intelligence", icon=":material/psychology:"),
 ]
 
 current_page = st.navigation(pages, position="sidebar")
