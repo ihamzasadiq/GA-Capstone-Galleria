@@ -5,11 +5,17 @@ import unittest
 import pandas as pd
 
 from services.data import (
+    DataBundle,
+    WALK_IN_CAMPAIGNS,
+    assign_walk_in_campaigns,
     brand_coverage,
     business_metrics,
+    campaign_recipients,
     customer_profiles,
     load_bundle,
     monthly_sales,
+    preferred_category_by_customer,
+    promotion_code,
     promotion_projection,
 )
 from services.ocr import (
@@ -37,28 +43,31 @@ class DataServiceTests(unittest.TestCase):
         cls.bundle = load_bundle()
 
     def test_demo_dataset_shape(self) -> None:
-        self.assertEqual(self.bundle.receipts["receipt_id"].nunique(), 45)
-        self.assertEqual(len(self.bundle.transactions), 51)
+        self.assertEqual(self.bundle.receipts["receipt_id"].nunique(), 224)
+        self.assertEqual(len(self.bundle.transactions), 270)
 
     def test_receipt_level_business_metrics(self) -> None:
         metrics = business_metrics(self.bundle)
-        self.assertAlmostEqual(metrics["gmv"], 1081.0, places=3)
-        self.assertAlmostEqual(metrics["aov"], 27.025, places=3)
-        self.assertAlmostEqual(metrics["outstanding"], 121.5, places=3)
-        self.assertEqual(metrics["units"], 55.0)
+        self.assertAlmostEqual(metrics["gmv"], 6292.0, places=3)
+        self.assertAlmostEqual(metrics["aov"], 33.6470588, places=3)
+        self.assertAlmostEqual(metrics["outstanding"], 441.75, places=3)
+        self.assertEqual(metrics["units"], 310.0)
 
     def test_brand_coverage_is_not_inflated(self) -> None:
-        self.assertAlmostEqual(brand_coverage(self.bundle.transactions), 3 / 51)
+        self.assertAlmostEqual(brand_coverage(self.bundle.transactions), 3 / 270)
 
     def test_monthly_sales_does_not_double_count_receipts(self) -> None:
         monthly = monthly_sales(self.bundle.receipts)
-        self.assertAlmostEqual(monthly["gmv_bhd"].sum(), 1081.0, places=3)
+        self.assertAlmostEqual(monthly["gmv_bhd"].sum(), 6187.0, places=3)
 
     def test_customer_profiles_are_rebuilt_from_receipts(self) -> None:
         profiles = customer_profiles(self.bundle)
-        self.assertEqual(len(profiles), 45)
-        self.assertEqual(int(profiles["top_spender"].sum()), 9)
-        self.assertEqual(int(profiles["repeat_customer"].sum()), 0)
+        self.assertEqual(len(profiles), 220)
+        self.assertEqual(int(profiles["top_spender"].sum()), 44)
+        self.assertEqual(int(profiles["repeat_customer"].sum()), 3)
+        self.assertEqual(int(profiles["inactive_customer"].sum()), 145)
+        self.assertEqual(int(profiles["campaign_audience"].notna().sum()), 196)
+        self.assertEqual(int(profiles["contactable_with_consent"].sum()), 0)
         self.assertEqual(int(profiles["days_since_purchase"].min()), 0)
 
     def test_promotion_projection_is_transparent_arithmetic(self) -> None:
@@ -66,6 +75,72 @@ class DataServiceTests(unittest.TestCase):
         self.assertAlmostEqual(result["expected_orders"], 2.0)
         self.assertAlmostEqual(result["potential_gmv_bhd"], 80.0)
         self.assertAlmostEqual(result["offer_budget_bhd"], 10.0)
+
+    def test_inactive_boundary_is_anchored_to_latest_receipt(self) -> None:
+        receipts = pd.DataFrame([
+            {"receipt_id": "R1", "customer_id": "C1", "transaction_date": "2026-01-08", "receipt_total_clean": 100.0},
+            {"receipt_id": "R2", "customer_id": "C2", "transaction_date": "2025-10-10", "receipt_total_clean": 80.0},
+            {"receipt_id": "R3", "customer_id": "C3", "transaction_date": "2025-10-11", "receipt_total_clean": 70.0},
+            {"receipt_id": "R4", "customer_id": "C4", "transaction_date": "2026-01-07", "receipt_total_clean": 60.0},
+            {"receipt_id": "R5", "customer_id": "C5", "transaction_date": "2026-01-06", "receipt_total_clean": 50.0},
+        ])
+        receipts["transaction_date"] = pd.to_datetime(receipts["transaction_date"])
+        bundle = DataBundle(
+            transactions=pd.DataFrame(columns=["customer_id"]), receipts=receipts,
+            brands=pd.DataFrame(), categories=pd.DataFrame(), ocr_metrics=pd.DataFrame(),
+            ocr_evaluation=pd.DataFrame(), source_dir=self.bundle.source_dir,
+        )
+        profiles = customer_profiles(bundle).set_index("customer_id")
+        self.assertTrue(bool(profiles.loc["C2", "inactive_customer"]))
+        self.assertFalse(bool(profiles.loc["C3", "inactive_customer"]))
+
+    def test_walk_in_campaigns_are_exclusive_and_codes_are_stable(self) -> None:
+        profiles = pd.DataFrame([
+            {"customer_id": "C1", "preferred_category": "Abaya", "inactive_customer": True, "top_spender": True, "alteration_customer": True, "recent_customer": False, "repeat_customer": False, "contactable_with_consent": True},
+            {"customer_id": "C2", "preferred_category": "Dress", "inactive_customer": True, "top_spender": False, "alteration_customer": False, "recent_customer": False, "repeat_customer": False, "contactable_with_consent": True},
+            {"customer_id": "C3", "preferred_category": "Blazer", "inactive_customer": False, "top_spender": True, "alteration_customer": False, "recent_customer": True, "repeat_customer": False, "contactable_with_consent": True},
+            {"customer_id": "C4", "preferred_category": "Abaya", "inactive_customer": False, "top_spender": False, "alteration_customer": True, "recent_customer": True, "repeat_customer": False, "contactable_with_consent": False},
+            {"customer_id": "C5", "preferred_category": "Abaya", "inactive_customer": False, "top_spender": False, "alteration_customer": False, "recent_customer": False, "repeat_customer": True, "contactable_with_consent": True},
+            {"customer_id": "C6", "preferred_category": "Selected merchandise", "inactive_customer": False, "top_spender": False, "alteration_customer": False, "recent_customer": False, "repeat_customer": False, "contactable_with_consent": True},
+        ])
+        assigned = assign_walk_in_campaigns(profiles)
+        audiences = assigned["campaign_audience"].astype(object).where(
+            assigned["campaign_audience"].notna(), None
+        ).tolist()
+        self.assertListEqual(audiences, [
+            "Inactive high spender", "Inactive customer", "Active top spender",
+            "Alteration customer", "Recent or repeat customer", None,
+        ])
+        recipients = campaign_recipients(assigned, "Inactive high spender", "2026-09-01")
+        self.assertEqual(recipients["customer_id"].tolist(), ["C1"])
+        self.assertEqual(recipients["recipient_offer"].iloc[0], "BHD 10 off your next Abaya purchase of BHD 60 or more")
+        self.assertEqual(recipients["expires_on"].iloc[0].isoformat(), "2026-09-15")
+        self.assertEqual(
+            promotion_code("C1", "Inactive high spender", "2026-09-01"),
+            promotion_code("C1", "Inactive high spender", "2026-09-01"),
+        )
+        self.assertNotEqual(
+            promotion_code("C1", "Inactive high spender", "2026-09-01"),
+            promotion_code("C1", "Inactive high spender", "2026-09-02"),
+        )
+
+    def test_preferred_category_uses_sales_then_recency_and_excludes_services(self) -> None:
+        transactions = pd.DataFrame([
+            {"customer_id": "C1", "product_category": "Abaya", "line_total_clean": 50.0, "transaction_date": "2026-01-01", "transaction_type": "Product Sale"},
+            {"customer_id": "C1", "product_category": "Dress", "line_total_clean": 50.0, "transaction_date": "2026-01-02", "transaction_type": "Product Sale"},
+            {"customer_id": "C1", "product_category": "Alteration", "line_total_clean": 100.0, "transaction_date": "2026-01-03", "transaction_type": "Alteration"},
+            {"customer_id": "C2", "product_category": "Unknown", "line_total_clean": 80.0, "transaction_date": "2026-01-03", "transaction_type": "Product Sale"},
+            {"customer_id": "C2", "product_category": "Abaya", "line_total_clean": 0.0, "transaction_date": "2026-01-04", "transaction_type": "Product Sale"},
+        ])
+        preferred = preferred_category_by_customer(transactions)
+        self.assertEqual(preferred.loc["C1"], "Dress")
+        self.assertNotIn("C2", preferred.index)
+        self.assertEqual(WALK_IN_CAMPAIGNS["Alteration customer"]["minimum_spend_bhd"], 0.0)
+
+    def test_percentage_offer_liability_is_included(self) -> None:
+        result = promotion_projection(20, 0.10, 100.0, discount_rate=0.10)
+        self.assertAlmostEqual(result["discount_per_order_bhd"], 10.0)
+        self.assertAlmostEqual(result["offer_budget_bhd"], 20.0)
 
 
 class OCRServiceTests(unittest.TestCase):

@@ -50,9 +50,9 @@ def main() -> None:
 
     bundle = load_bundle(ROOT / "data" / "demo")
     metrics = business_metrics(bundle)
-    if int(metrics["receipts"]) != 45 or len(bundle.transactions) != 51:
+    if int(metrics["receipts"]) != 224 or len(bundle.transactions) != 270:
         fail("demo record counts do not match the verified benchmark")
-    if round(metrics["gmv"], 3) != 1081.000:
+    if round(metrics["gmv"], 3) != 6292.000:
         fail("GMV is not calculated at receipt level")
 
     print("All application, data, privacy, and calculation checks passed.")
