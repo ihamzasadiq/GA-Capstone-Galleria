@@ -26,8 +26,8 @@ This project converts those receipts into structured transaction data and presen
 | Sales overview | Recorded product sales, receipt count, average receipt, and outstanding balance |
 | Product analysis | Sales and units by product category |
 | Brand analysis | Confirmed brand sales, units, average price, and downloadable statement |
-| Customer groups | Top spenders, recent buyers, repeat customers, and alteration customers |
-| Promotion planning | Transparent potential-sales scenario for a selected customer group |
+| Walk-in campaigns | Exclusive, rule-based audiences for lapsed, high-value, alteration, and returning customers |
+| Promotion planning | Consent-gated store-only codes and a transparent sales/discount scenario |
 | Intelligence | Exploratory purchase patterns, guarded next-week GMV baselines, and OCR benchmark reporting |
 | Privacy | Public demo files exclude names, phone numbers, email addresses, and physical addresses |
 
@@ -71,14 +71,15 @@ Unknown brands are excluded from brand comparisons instead of being guessed. The
 
 Customer profiles are rebuilt from verified receipts whenever the application loads.
 
-| Group | Rule |
+| Campaign audience | Rule |
 | --- | --- |
-| Top spenders | Highest 20% by recorded customer spend |
-| Recent buyers | Last purchase within 30 days of the latest receipt in the dataset |
-| Repeat customers | Two or more unique receipts |
-| Needed alterations | At least one transaction with a confirmed alteration request |
+| Inactive high spender | Highest 20% by recorded spend and no purchase for 90+ days |
+| Inactive customer | No purchase for 90+ days |
+| Active top spender | Highest 20% by recorded spend, but not inactive |
+| Alteration customer | At least one transaction with a confirmed alteration request, with no higher-priority campaign |
+| Recent or repeat customer | Purchase within 30 days or two or more receipts, with no higher-priority campaign |
 
-Recency is anchored to the latest transaction in the dataset, not the current date. This prevents historical demo data from incorrectly making every customer appear inactive.
+Recency and inactivity are anchored to the latest transaction in the dataset, not the current date. Each customer receives their first matching campaign only, so offers do not stack.
 
 ### Intelligence
 
@@ -88,11 +89,13 @@ The Intelligence page makes its uncertainty explicit:
 - **Weekly GMV Forecast** is a one-week exploratory estimate. It compares last-week value, four-week moving average, and simple exponential smoothing with expanding-window MAE and WAPE. A historical gap is not converted into zero-sales weeks; only the newest continuous weekly period can train the model, and fewer than eight weeks shows an unavailable state.
 - **OCR Evaluation** displays only saved, de-identified benchmark results. It reports held-out receipt and field counts, JSON and missing-field rates, normalized field accuracy, BHD ±0.001 numeric accuracy, line-item precision/recall/F1, processing time, and error examples.
 
-The current workbook scope is **82 receipt IDs, 96 transaction lines, and 79 purchasing customer IDs**. Seventy-seven of those customers have one recorded receipt, so RFM frequency is descriptive rather than evidence of stable customer behaviour. The two active date periods are separated by 201 days; forecasting remains exploratory. The bundled public demo is a smaller 45-receipt fixture used for application tests and does not replace the capstone workbook.
+The current workbook scope is **82 receipt IDs, 96 transaction lines, and 79 purchasing customer IDs**. Seventy-seven of those customers have one recorded receipt, so RFM frequency is descriptive rather than evidence of stable customer behaviour. The two active date periods are separated by 201 days; forecasting remains exploratory. The bundled public demo is a larger 224-receipt fixture used for application tests and does not replace the capstone workbook.
 
 ## Promotion Example
 
-The Customers page includes a small scenario planner. It estimates possible orders and product sales from two editable assumptions:
+The Customers page uses social media for product awareness and presents store-only offers as a reason to walk in. It assigns one of five priority audiences to an eligible customer and creates a 14-day, one-time promotion code only for customers with recorded marketing consent. Each merchandise offer uses the customer's preferred category: the highest recorded product-sales value, with the most recent purchase breaking a tie. Alteration, delivery, unknown, and zero-value rows do not establish a preference.
+
+The scenario planner estimates possible orders, product sales before discounts, and the offer liability from two editable assumptions:
 
 - Percentage of selected customers who purchase
 - Expected value of each resulting order
@@ -100,13 +103,14 @@ The Customers page includes a small scenario planner. It estimates possible orde
 For example, using the included demo data:
 
 ```text
-Customer group:          Top spenders
-Customers selected:      9
-Promotion:               Private collection preview
-Assumed response rate:   20%
-Possible orders:         1.8
-Expected order value:    BHD 50.000
-Potential product sales: BHD 90.000
+Campaign audience:       Inactive high spender
+Customers selected:      30
+Promotion:               BHD 10 off a preferred-category purchase of BHD 60+
+Assumed response rate:   8%
+Possible orders:         2.4
+Expected order value:    BHD 60.000
+Potential product sales: BHD 144.000
+Maximum discount liability: BHD 24.000
 ```
 
 The calculation is:
@@ -114,7 +118,7 @@ The calculation is:
 ```text
 Possible orders = selected customers × assumed response rate
 Potential sales = possible orders × expected order value
-Offer cost       = possible orders × cost per converted customer
+Offer liability  = possible orders × discount per converted customer
 ```
 
 This is a planning scenario, not a machine-learning prediction. Product sales are also not automatically Galleria revenue because Galleria currently earns fixed rental fees rather than sales commission.
@@ -260,6 +264,10 @@ Streamlit will print a local address, normally `http://localhost:8501`.
 - Brand comparisons use confirmed brand rows only.
 - Customer spend is grouped by anonymized customer ID.
 - The top-spender group contains the highest 20% of current profiles.
+- Inactive customers have not purchased for 90+ days relative to the latest receipt in the dataset.
+- Campaign priority prevents a customer from receiving more than one offer.
+- Preferred merchandise categories are calculated from confirmed positive-value product sales; alteration customers instead receive a tailoring-service credit.
+- Direct recipient exports and promotion codes require recorded marketing consent.
 - Promotion outputs are labelled as scenarios rather than forecasts.
 - Partner product sales are separated from Galleria rental income.
 - Purchase-pattern clusters are exploratory receipt groups, not customer segments.
