@@ -4,15 +4,12 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from components.charts import PALETTE, style_figure
+from components.charts import style_figure
 from components.ui import metric_grid, page_header, section_header
-from services.data import to_csv_bytes
 from services.intelligence import (
     canonical_receipts,
-    cluster_purchase_patterns,
     forecast_next_week,
     ocr_metric_summary,
-    rfm_summary,
 )
 from views.common import get_bundle
 
@@ -42,61 +39,13 @@ receipts = _intelligence_receipts(bundle)
 page_header(
     "INTELLIGENCE",
     "Exploratory signals",
-    "Purchase patterns, a one-week GMV estimate, and a transparent OCR benchmark.",
+    "A one-week GMV estimate and a transparent OCR benchmark.",
 )
 st.caption(
-    "These are small-data exploratory analyses. Purchase patterns are not customer segments, and the GMV estimate is not a seasonal or long-range forecast."
+    "These are small-data exploratory analyses. The GMV estimate is not a seasonal or long-range forecast."
 )
 
-patterns_tab, forecast_tab, ocr_tab = st.tabs(["Purchase Patterns", "Weekly GMV Forecast", "OCR Evaluation"])
-
-with patterns_tab:
-    labelled, scores = cluster_purchase_patterns(receipts)
-    rfm = rfm_summary(receipts)
-    section_header("Exploratory purchase patterns", "Complete receipts are grouped by their purchase mix, not by customer identity.")
-    if labelled.empty:
-        st.info("At least three complete receipts are required before exploratory purchase patterns can be calculated.")
-    else:
-        profile = labelled.groupby(["pattern_cluster", "pattern_label"], as_index=False).agg(
-            receipts=("receipt_id", "nunique"),
-            median_gmv_bhd=("receipt_total_clean", "median"),
-            median_units=("units", "median"),
-            median_lines=("line_count", "median"),
-            median_outstanding_bhd=("outstanding_balance_bhd", "median"),
-        ).sort_values("pattern_cluster")
-        metric_grid([
-            {"label": "Receipts grouped", "value": f"{len(labelled):,}", "note": "Complete receipts with GMV"},
-            {"label": "Patterns selected", "value": f"{profile['pattern_cluster'].nunique()}", "note": "Chosen by silhouette score"},
-            {"label": "Best silhouette", "value": f"{scores['silhouette_score'].max():.2f}", "note": "2–6 clusters considered"},
-        ])
-        chart = px.scatter(
-            labelled,
-            x="receipt_total_clean",
-            y="units",
-            color="pattern_label",
-            hover_data=["receipt_id", "line_count", "product_mix", "payment_state"],
-            color_discrete_sequence=PALETTE,
-            title="Receipt value and units by purchase pattern",
-        )
-        chart.update_layout(xaxis_title="Receipt GMV (BHD)", yaxis_title="Units")
-        st.plotly_chart(style_figure(chart), width="stretch", config={"displayModeBar": False})
-        st.dataframe(profile, hide_index=True, width="stretch", column_config={
-            "pattern_cluster": "Pattern", "pattern_label": "Observed profile", "median_gmv_bhd": st.column_config.NumberColumn("Median GMV", format="BHD %.3f"),
-            "median_units": st.column_config.NumberColumn("Median units", format="%.1f"), "median_lines": st.column_config.NumberColumn("Median lines", format="%.1f"),
-            "median_outstanding_bhd": st.column_config.NumberColumn("Median outstanding", format="BHD %.3f"),
-        })
-        st.download_button("Download de-identified purchase patterns", to_csv_bytes(labelled), "purchase_patterns_public.csv", "text/csv")
-
-    with st.expander("RFM customer summary and limitation"):
-        if rfm.empty:
-            st.info("RFM becomes available when receipts have valid customer IDs, dates, and totals.")
-        else:
-            one_receipt = int(rfm["frequency"].eq(1).sum())
-            st.warning(f"{one_receipt} of {len(rfm)} customers have one recorded receipt. Frequency-based conclusions are limited.")
-            st.dataframe(rfm, hide_index=True, width="stretch", column_config={
-                "monetary_bhd": st.column_config.NumberColumn("Recorded spend", format="BHD %.3f"),
-                "recency_days": st.column_config.NumberColumn("Days since purchase", format="%d"),
-            })
+forecast_tab, ocr_tab = st.tabs(["Weekly GMV Forecast", "OCR Evaluation"])
 
 with forecast_tab:
     forecast = forecast_next_week(receipts)
