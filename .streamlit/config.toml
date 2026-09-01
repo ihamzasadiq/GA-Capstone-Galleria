@@ -1,0 +1,44 @@
+[theme]
+base = "light"
+primaryColor = "#6D38E8"
+backgroundColor = "#FCFCFF"
+secondaryBackgroundColor = "#F5F3FF"
+textColor = "#1E2437"
+linkColor = "#5B2CCB"
+codeTextColor = "#30364A"
+codeBackgroundColor = "#F5F3FF"
+borderColor = "#E4E2EE"
+baseRadius = "medium"
+buttonRadius = "medium"
+showWidgetBorder = true
+showSidebarBorder = true
+font = "DM Sans:https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+headingFont = "Manrope:https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap"
+baseFontSize = 15
+baseFontWeight = 400
+headingFontSizes = ["38px", "28px", "22px", "18px", "16px", "14px"]
+headingFontWeights = [700, 700, 700, 700, 600, 600]
+linkUnderline = false
+chartCategoricalColors = ["#6D38E8", "#A78BFA", "#0F9F6E", "#3B82F6", "#D946A6", "#E46D23", "#E33A4D"]
+greenColor = "#0F9F6E"
+greenBackgroundColor = "#E9F8F1"
+greenTextColor = "#087A53"
+redColor = "#D92D45"
+redBackgroundColor = "#FFF0F2"
+redTextColor = "#B42336"
+orangeColor = "#C75A10"
+orangeBackgroundColor = "#FFF5E9"
+orangeTextColor = "#A34708"
+blueColor = "#3B5CCC"
+blueBackgroundColor = "#EEF2FF"
+blueTextColor = "#3049A6"
+violetColor = "#6D38E8"
+violetBackgroundColor = "#F1EDFF"
+violetTextColor = "#5525C6"
+
+[theme.sidebar]
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F6F5FA"
+textColor = "#39435A"
+borderColor = "#E4E2EE"
+primaryColor = "#6D38E8"

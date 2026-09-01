@@ -148,7 +148,7 @@ def progress_card(title: str, detail: str, value: float, label: str) -> None:
         <div class="g-card">
           <div style="display:flex;justify-content:space-between;gap:1rem;align-items:center">
             <div><h3>{escape(title)}</h3><p>{escape(detail)}</p></div>
-            <strong style="color:#191611">{escape(label)}</strong>
+            <strong style="color:var(--ink)">{escape(label)}</strong>
           </div>
           <div class="g-progress-shell" style="margin-top:1rem">
             <div class="g-progress-bar" style="width:{percent:.1f}%"></div>
