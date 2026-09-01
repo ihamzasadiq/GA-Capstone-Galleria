@@ -45,8 +45,9 @@ def horizontal_bar(
     value: str,
     title: str,
     color: str | None = None,
+    sort_by_value: bool = True,
 ) -> go.Figure:
-    ordered = data.sort_values(value, ascending=True)
+    ordered = data.sort_values(value, ascending=True) if sort_by_value else data
     fig = px.bar(
         ordered,
         x=value,
@@ -55,9 +56,18 @@ def horizontal_bar(
         color=color,
         color_discrete_sequence=PALETTE,
     )
-    fig.update_traces(marker_line_width=0, hovertemplate="%{y}<br>%{x:,.2f}<extra></extra>")
-    fig.update_layout(title=title, xaxis_title="", yaxis_title="", showlegend=color is not None)
-    return style_figure(fig)
+    fig.update_traces(
+        marker_line_width=0,
+        texttemplate="%{x:,.0f}",
+        textposition="outside",
+        cliponaxis=False,
+        hovertemplate="%{y}<br>BHD %{x:,.3f}<extra></extra>",
+    )
+    fig.update_layout(title=title, xaxis_title="Sales (BHD)", yaxis_title="", showlegend=color is not None)
+    fig.update_xaxes(rangemode="tozero")
+    chart = style_figure(fig, height=max(330, 52 * len(ordered) + 110))
+    chart.update_layout(margin={"l": 28, "r": 72, "t": 62, "b": 44})
+    return chart
 
 
 def donut_chart(data: pd.DataFrame, names: str, values: str, title: str) -> go.Figure:
